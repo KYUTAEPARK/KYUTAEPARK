@@ -14,15 +14,15 @@ SourceFileName = 'data2.xls'
 # ws = w.add_sheet ('Copied Cell')
 
 count = 0
-s = '￿￿'
+s = '대학교'
 for sheet_name, values in parse_xls(SourceFilePath+SourceFileName, 'utf-8'):
-for row_idx, col_idx in sorted(values.keys()):
-v = values[(row_idx, col_idx)]
-# print '(%d, %d) =' % (row_idx, col_idx), v
-if (type(v) is unicode):
+	for row_idx, col_idx in sorted(values.keys()):
+		v = values[(row_idx, col_idx)]
+		# print '(%d, %d) =' % (row_idx, col_idx), v
+		if (type(v) is unicode):
 tmp = str(v)
 if tmp.find(s) >= 0:
 count = count + 1 # count
 # ws.write(row_idx,col_idx,v)
-print s, '￿￿￿￿ ￿￿￿ ￿￿ ￿￿' , count, '￿ ￿￿￿.'
+print s, '' , count, '.'
 # w.save('copiedfile.xls')
